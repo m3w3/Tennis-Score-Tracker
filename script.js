@@ -1,4 +1,4 @@
-const socket = io('http://localhost:3000');
+const socket = io('http://localhost:8080')
 // folowing are displays
 const p1Score = document.getElementById('p1-score');
 const p2Score = document.getElementById('p2-score');

@@ -1,31 +1,26 @@
 # Tennis-Score-Tracker
 Create a NodeJS server that can render a tennis game and provides an API that returns the score as the game progresses. For more information about tennis score and rules see http://tennis.about.com/cs/beginners/a/beginnerscore.htm.
 
-The minimum UI in pseudo html you’ll need is:
+To start, run:
+`npm run devStart`
+`npm run mainServer`
 
--------
-<div>Player 1</div><div>${player1Score}</div>
-<div>Player 2</div><div>${player2Score}</div>
+You'll need two terminals to create this. Once both have successfully launched, head over to [http://127.0.0.1:5500/](http://127.0.0.1:5500/).
 
-<div>Player ${playerThatWon} won!</div>
+Test Logic:
+1) p1 -> p1 (30:0) -> p1
+This should result in 40:0, and p1 should be declared the winner.
 
-<button>Player 1 scored</button>
-<button>Player 2 scored</button>
+2) p1 -> p2 -> (15:15) p1 -> p2 (30:30) -> p1 (40:30) -> p1
+This should result in 40:30 (I didn't want to use ADV:30 since that's not how TV scores are shown), and p1 should be declared the winner.
 
-<button>Reset Game</button>
--------
+3) p1 -> p2 -> p1 -> p2 -> p1 -> p2 (40:40) -> p1 -> p1
+This should result in ADV:40, and p1 should be declared the winner.
 
-Requirements:
+4) p1 -> p2 -> p1 -> p2 -> p1 -> p2 (40:40) -> p1 -> p2 (40:40) -> p2 -> p2
+This should result in 40:ADV, and p2 should be declared the winner.
 
--    The server is written in Node
--    The state of the game is kept on the server and the client is used to show said state
--    You can use Player1 and Player2 as the player names and not need to deal with having the user add this information
--    Add tests for your logic
+5) Immediately after the winner has been announced, any further point increases will result in an alert.
+This will prompt the user to reset the game, as the current game is now over.
 
-Notes:
-
--    The server only needs to handle a single game at a time to avoid having to deal with multiple sessions. You are welcome to make it more advance but is not required
--    You will be adding functionality/testing to your project once you come to on-site interviews with some of our engineers so we expect you to understand the work
--    You can write your project in any version of Node you want and we won’t be really looking at styling so feel free to keep it simple
--    The actual logic of the problem is meant to be straightforward with no intentionally hidden gotchas
--    Please provide tests for your logic. Feel free to use the api or just test the logic directly
+6) Note that all of the test logic above can be reversed (e.g. p1 and p2 swapped).

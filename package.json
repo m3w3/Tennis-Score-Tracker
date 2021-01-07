@@ -2,9 +2,10 @@
   "name": "tennis-score-tracker",
   "version": "1.0.0",
   "description": "Simple server for HTML page that tracks the score of a tennis game.",
-  "main": "server.js",
+  "main": "",
   "scripts": {
-    "devStart": "npx nodemon server.js"
+    "devStart": "npx nodemon server.js",
+    "mainServer": "http-server -p 5500"
   },
   "repository": {
     "type": "git",

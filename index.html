@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tennis Score Tracker</title>
-    <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
-    <script defer src="script.js"></script>
- </head>
- <body>
-    <h3>Player 1 Score</h3>
-    <div id="p1-score">0</div>
-    <h3>Player 2 Score</h3>
-    <div id="p2-score">0</div>
-    <br></br>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Tennis Score Tracker</title>
+      <script defer src="http://localhost:8080/socket.io/socket.io.js"></script>
+      <script defer src="script.js"></script>
+   </head>
+   <body>
+      <h3>Player 1 Score</h3>
+      <div id="p1-score">0</div>
+      <h3>Player 2 Score</h3>
+      <div id="p2-score">0</div>
+      <br></br>
 
-    <h3>Winner</h3>
-    <div id="winner">No one... yet</div>
-    <br></br>
+      <h3>Winner</h3>
+      <div id="winner">No one... yet</div>
+      <br></br>
 
-    <button id="p1-point">Player 1 scored</button>
-    <button id="p2-point">Player 2 scored</button>
-    <br></br>
+      <button id="p1-point">Player 1 scored</button>
+      <button id="p2-point">Player 2 scored</button>
+      <br></br>
 
-    <button id="reset">Reset Game</button>
- </body>
+      <button id="reset">Reset Game</button>
+   </body>
 </html>
